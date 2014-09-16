@@ -1,17 +1,22 @@
 <!DOCTYPE html>
-<h2>
-    Add new todo
-</h2>
+<h2>Add new todo</h2>
 <div>
-    <div>
+    <form name="todoForm" novalidate>
         <div>
-            <span>Title</span> <input type="text" name="title" ng-model="todo.title">
+            <span>Title</span> <input type="text" name="title" ng-model="todo.title" ng-maxlength="20" required>
+            <div ng-show="todoForm.title.$dirty && todoForm.title.$invalid">
+                <span ng-show="todoForm.title.$error.required">Title is a mandatory field.</span>
+                <span ng-show="todoForm.title.$error.maxlength">Title too long.</span>
+            </div>
         </div>
         <div>
-            <span>Notes</span> <textarea name="notes" ng-model="todo.notes"></textarea>
+            <span>Notes</span> <textarea name="notes" ng-model="todo.notes" ng-maxlength="100"></textarea>
+            <div ng-show="todoForm.notes.$dirty && todoForm.notes.$invalid">
+                <span ng-show="todoForm.notes.$error.maxlength">Notes too long.</span>
+            </div>
         </div>
-    </div>
-    <button ng-click="saveTodo(todo)">
+    </form>
+    <button ng-disabled="todoForm.$invalid" ng-click="saveTodo(todo)">
         <span ng-show="isSave">Save</span>
         <span ng-hide="isSave">Update</span> todo
     </button>
