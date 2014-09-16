@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<h2>TODO List</h2>
+<div>
+    <h3>- You have <span ng-init='totalTodos = 0' ng-bind='totalTodos'></span> todo's</h3>
+    <button ng-click="goTo('/AddTodo/0')">Add todo</button>
+</div>
+
+<div>
+    <div ng-repeat="todo in todos track by $index" ng-click="goTo('/AddTodo/' + todo.id)">
+        <span ng-bind="todo.title"></span>
+        <span ng-bind="todo.date | date:'dd/MMM/yyyy hh:mma'"></span>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<h2>
+    Add new todo
+</h2>
+<div>
+    <div>
+        <div>
+            <span>Title</span> <input type="text" name="title" ng-model="todo.title">
+        </div>
+        <div>
+            <span>Notes</span> <textarea name="notes" ng-model="todo.notes"></textarea>
+        </div>
+    </div>
+    <button ng-click="saveTodo(todo)">
+        <span ng-show="isSave">Save</span>
+        <span ng-hide="isSave">Update</span> todo
+    </button>
+    <button ng-hide="isSave" ng-click="deleteTodo(todo.id)">Delete todo</button>
+</div>

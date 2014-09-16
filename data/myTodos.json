@@ -1,0 +1,6 @@
+[
+    {"id": 1, "title": "Sample1", "date": "1410805175598", "notes": "This is my first todo."},
+    {"id": 2, "title": "Sample2", "date": "1412805175598", "notes": "This is my second todo."},
+    {"id": 3, "title": "Sample3", "date": "1416805175598", "notes": "This is my Third todo."},
+    {"id": 4, "title": "Sample4", "date": "1419805175598", "notes": "This is my Fourth todo."}
+]
